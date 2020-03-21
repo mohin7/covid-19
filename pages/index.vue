@@ -61,21 +61,28 @@
               <div class="location-effected">
                 <ul>
                   <li>
-                    <strong>Active</strong>
+                    <strong> Country:</strong>
+                    <span
+                      >{{ countryData ? countryData.country : 'loading' }}
+                      <div class="status active"></div
+                    ></span>
+                  </li>
+                  <li>
+                    <strong>Active:</strong>
                     <span
                       >{{ countryData ? countryData.cases : 'loading' }}
                       <div class="status active"></div
                     ></span>
                   </li>
                   <li>
-                    <strong>Today Effected</strong>
+                    <strong>Today Effected:</strong>
                     <span
                       >{{ countryData ? countryData.todayCases : 'loading' }}
                       <div class="status t-effected"></div
                     ></span>
                   </li>
                   <li>
-                    <strong>Death</strong>
+                    <strong>Death:</strong>
                     <span
                       >{{ countryData ? countryData.deaths : 'loading' }}
                       <div class="status death"></div
