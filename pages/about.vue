@@ -1,15 +1,13 @@
 <template>
   <div>
-    coming soon
+   <h2 class="text-center">About page Comming Soon</h2>
+   <br>
+   <br>
   </div>
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {}
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

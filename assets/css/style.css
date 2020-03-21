@@ -47,12 +47,17 @@
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 10px 30px;
-  border-radius: 50px;
+  display: block;
+  padding: 8px 20px;
   margin-left: 15px;
+  border-radius: 5px;
+}
+button:focus{
+  outline: none;
 }
 .contact-button a {
   color: #333;
+  
 }
 .heading-top h1 {
   font-size: 36px;
@@ -244,6 +249,11 @@ button.search {
 ::-webkit-scrollbar-thumb:hover {
   background: #ddd;
 }
+.nb h4 {
+  margin-top: 30px;
+  font-size: 15px;
+  line-height: 25px;
+}
 
 /*=================================================================================================
                                     Responsive code start
@@ -317,6 +327,16 @@ button.search {
   }
   .location-area {
     margin-bottom: 30px;
+  }
+  .footer-area {
+    display: inherit !important;
+  }
+  .footer-left {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .input-area {
+    margin-bottom: 15px;
   }
 }
 

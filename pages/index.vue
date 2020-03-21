@@ -136,6 +136,9 @@
           </div>
         </div>
       </div>
+      <div class="nb">
+        <h4>NB: If you have any suggestion, feel free inform me.</h4>
+      </div>
     </div>
   </div>
 </template>
