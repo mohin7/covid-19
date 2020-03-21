@@ -23,7 +23,7 @@
         <div class="col-lg-7">
           <div class="app-left-content">
             <div class="heading-top">
-              <h1>Coronaviruses <span>Last Update: </span></h1>
+              <h1>Coronaviruses <span>Last Update: {{ worlData.updated || 'loading' }}</span></h1>
               <p>Covid-19</p>
             </div>
             <!-- realtime report start  -->
