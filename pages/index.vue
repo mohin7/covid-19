@@ -23,12 +23,12 @@
         <div class="col-lg-7">
           <div class="app-left-content">
             <div class="heading-top">
-              <h1>Coronaviruses</h1>
+              <h1>Coronaviruses <span>Last Update: {{ worlData.updated || 'loading' }}</span></h1>
               <p>Covid-19</p>
             </div>
             <!-- realtime report start  -->
             <div class="real-time-report">
-              <h4>Realtime Report</h4>
+              <h4>Realtime Report (Global)</h4>
               <div class="realtiem-report-wrapper">
                 <div class="single-realtime-report">
                   <h3>{{ worlData.cases || 'loading' }}</h3>
@@ -46,14 +46,9 @@
             </div>
             <!-- realtime report end -->
 
-            <!-- video start  -->
-            <div class="video-thumbnail">
-              video
-            </div>
-            <!-- video end -->
-
-            <div class="location-area">
-              <select name="Select" @change="countryChange($event)">
+            <div class="location-area mt-4">
+              <label for="#select">Selected  country: {{ countryData ? countryData.country : 'loading' }}</label>
+              <select id="select" name="Select" @change="countryChange($event)">
                 <option
                   :value="country.country"
                   v-for="country in countryAllData"
@@ -62,21 +57,6 @@
                   >{{ country.country || 'Lodaing' }}</option
                 >
               </select>
-              <div class="your-location">
-                <div class="location">
-                  <h2>
-                    Country:
-                    {{ countryData ? countryData.country : 'loading' }}
-                  </h2>
-                  <p>Description</p>
-                </div>
-                <button class="location-btn">
-                  <i class="fa fa-globe" aria-hidden="true"></i>
-                </button>
-              </div>
-              <div class="graphical-view">
-                graph
-              </div>
 
               <div class="location-effected">
                 <ul>
@@ -126,7 +106,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </div>
-
+            
               <div class="country-list">
                 <table class="table table-striped">
                   <thead>
@@ -139,12 +119,12 @@
                       <td>Death</td>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody class="custom-scroll">
                     <tr
                       v-for="country in filteredCountrys"
                       :key="country.country"
                     > <div v-if="filteredCountrys.length == 0">No data</div>
-                      <td>{{ country.country }}</td>
+                      <td><strong>{{ country.country }}</strong></td>
                       <td>{{ country.cases }}</td>
                       <td>{{ country.todayCases }}</td>
                       <td>{{ country.critical }}</td>
@@ -214,5 +194,5 @@ export default {
 }
 </script>
 <style>
-@import "@/assets/css/style.css"
+@import "@/assets/css/style.css";
 </style>
