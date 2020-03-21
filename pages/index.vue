@@ -23,8 +23,11 @@
         <div class="col-lg-7">
           <div class="app-left-content">
             <div class="heading-top">
-              <h1>Coronaviruses <span>Last Update: {{ worlData.updated || 'loading' }}</span></h1>
-              <p>Covid-19</p>
+              <h1>
+                Coronaviruses
+                <span>Updated: {{ worlData ? getData(worlData.updated) : 'loading' }}</span>
+              </h1>
+              <p>Coronaviruses (CoV) are a large family of viruses that cause illness ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS-CoV) and Severe Acute Respiratory Syndrome (SARS-CoV)</p>
             </div>
             <!-- realtime report start  -->
             <div class="real-time-report">
@@ -47,7 +50,10 @@
             <!-- realtime report end -->
 
             <div class="location-area mt-4">
-              <label for="#select">Selected  country: {{ countryData ? countryData.country : 'loading' }}</label>
+              <label for="#select"
+                >Selected country:
+                {{ countryData ? countryData.country : 'loading' }}</label
+              >
               <select id="select" name="Select" @change="countryChange($event)">
                 <option
                   :value="country.country"
@@ -113,7 +119,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </div>
-            
+
               <div class="country-list">
                 <table class="table table-striped">
                   <thead>
@@ -130,8 +136,11 @@
                     <tr
                       v-for="country in filteredCountrys"
                       :key="country.country"
-                    > <div v-if="filteredCountrys.length == 0">No data</div>
-                      <td><strong>{{ country.country }}</strong></td>
+                    >
+                      <div v-if="filteredCountrys.length == 0">No data</div>
+                      <td>
+                        <strong>{{ country.country }}</strong>
+                      </td>
                       <td>{{ country.cases }}</td>
                       <td>{{ country.todayCases }}</td>
                       <td>{{ country.critical }}</td>
@@ -150,6 +159,7 @@
 </template>
 <script>
 import axios from 'axios'
+import moment from 'moment'
 export default {
   data() {
     return {
@@ -187,6 +197,9 @@ export default {
         `https://corona.lmao.ninja/countries/Bangladesh`
       )
       this.countryData = res.data
+    },
+    getData(data) {
+       return moment(data).fromNow(); 
     }
   },
   computed: {
@@ -201,5 +214,5 @@ export default {
 }
 </script>
 <style>
-@import "@/assets/css/style.css";
+@import '@/assets/css/style.css';
 </style>
