@@ -1,8 +1,26 @@
 <template>
-  <div>
-    <nuxt />
+  <div class="container">
+    <div class="app">
+      <!-- header start  -->
+      <HeaderArea />
+      <!-- header end -->
+      <nuxt/>
+
+      <Footer/>
+    </div>
   </div>
 </template>
+
+<script>
+import HeaderArea from '@/components/HeaderArea';
+import Footer from '@/components/Footer';
+export default {
+  components: {
+    HeaderArea,
+    Footer
+  }
+}
+</script>
 
 <style>
 html {

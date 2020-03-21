@@ -47,11 +47,18 @@
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 10px 30px;
-  border-radius: 50px;
+  display: block;
+  padding: 8px 20px;
   margin-left: 15px;
+  border-radius: 5px;
 }
-
+button:focus{
+  outline: none;
+}
+.contact-button a {
+  color: #333;
+  
+}
 .heading-top h1 {
   font-size: 36px;
   font-weight: 400;
@@ -242,3 +249,95 @@ button.search {
 ::-webkit-scrollbar-thumb:hover {
   background: #ddd;
 }
+.nb h4 {
+  margin-top: 30px;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+/*=================================================================================================
+                                    Responsive code start
+=================================================================================================*/
+/**************************************************************** 
+                  Full HD Min Width 1407
+**************************************************************** */
+/* Full HD Min Width 1408px */
+@media (min-width: 1408px) {
+}
+
+/**************************************************************** 
+                  Widescreen Between 1216px and 1407px
+**************************************************************** */
+@media (min-width: 1216px) and (max-width: 1407px) {
+}
+
+/**************************************************************** 
+                  Desktop Between 1024px and 1215px
+**************************************************************** */
+@media (min-width: 1024px) and (max-width: 1215px) {
+}
+
+/**************************************************************** 
+                  Tablet Between 769px and 1023px
+**************************************************************** */
+@media (min-width: 769px) and (max-width: 1023px) {
+}
+
+/**************************************************************** 
+                    Mobile Up to 768px. 
+**************************************************************** */
+@media only screen and (min-width: 100px) and (max-width: 768px) {
+  .row.mt-5 {
+    margin-top: 30px !important;
+  }
+  .logo a {
+    font-size: 22px;
+  }
+  .menu-item {
+    display: none;
+  }
+  .heading-top h1 {
+    font-size: 26px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .heading-top h1 span {
+    display: block;
+    float: inherit;
+  }
+  .heading-top p {
+    display: none;
+  }
+  .real-time-report h4 {
+    margin-bottom: 15px;
+    margin-top: 36px;
+    font-weight: 500;
+  }
+  .single-realtime-report h3 {
+    font-size: 30px;
+  }
+
+  .realtiem-report-wrapper {
+    overflow-x: auto;
+    padding: 10px;
+  }
+  .single-realtime-report {
+    margin-bottom: 30px;
+    min-width: 200px;
+  }
+  .location-area {
+    margin-bottom: 30px;
+  }
+  .footer-area {
+    display: inherit !important;
+  }
+  .footer-left {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .input-area {
+    margin-bottom: 15px;
+  }
+}
+
+/*=================================================================================================*/
