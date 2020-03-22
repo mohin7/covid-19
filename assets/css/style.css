@@ -52,13 +52,15 @@
   margin-left: 15px;
   border-radius: 5px;
 }
-button:focus{
+
+button:focus {
   outline: none;
 }
+
 .contact-button a {
   color: #333;
-  
 }
+
 .heading-top h1 {
   font-size: 36px;
   font-weight: 400;
@@ -115,10 +117,17 @@ button:focus{
   margin-right: 0;
 }
 
+.single-realtime-report:last-child h3 {
+  margin-bottom: 30px;
+}
+
 .single-realtime-report h3 {
   font-size: 36px;
   font-weight: 400;
-  margin-bottom: 30px;
+}
+
+.single-realtime-report h5 {
+  font-size: 15px;
 }
 
 .single-realtime-report p {
@@ -224,6 +233,7 @@ button.search {
 ::-webkit-scrollbar-thumb:hover {
   background: #ddd;
 }
+
 .nb h4 {
   margin-top: 30px;
   font-size: 15px;
@@ -265,29 +275,36 @@ button.search {
   .row.mt-5 {
     margin-top: 30px !important;
   }
+
   .logo a {
     font-size: 22px;
   }
+
   .menu-item {
     display: none;
   }
+
   .heading-top h1 {
     font-size: 26px;
     overflow: hidden;
     margin-bottom: 20px;
   }
+
   .heading-top h1 span {
     display: block;
     float: inherit;
   }
+
   .heading-top p {
     display: none;
   }
+
   .real-time-report h4 {
     margin-bottom: 15px;
     margin-top: 36px;
     font-weight: 500;
   }
+
   .single-realtime-report h3 {
     font-size: 30px;
   }
@@ -296,20 +313,25 @@ button.search {
     overflow-x: auto;
     padding: 10px;
   }
+
   .single-realtime-report {
     margin-bottom: 30px;
     min-width: 200px;
   }
+
   .location-area {
     margin-bottom: 30px;
   }
+
   .footer-area {
     display: inherit !important;
   }
+
   .footer-left {
     margin-bottom: 20px;
     text-align: center;
   }
+
   .input-area {
     margin-bottom: 15px;
   }

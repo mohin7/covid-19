@@ -23,15 +23,18 @@
           <div class="realtiem-report-wrapper">
             <div class="single-realtime-report">
               <h3>{{ worlData.cases || 'loading' }}</h3>
-              <p>Active</p>
+              <h5 class="danger">+{{ todayAffected }} (Today)</h5>
+              <p>Total Active</p>
+            </div>
+
+            <div class="single-realtime-report active">
+              <h3>{{ worlData.deaths || 'loading' }}</h3>
+              <h5 class="danger">+{{ todayDeath }} (Today)</h5>
+              <p>Deaths</p>
             </div>
             <div class="single-realtime-report">
               <h3>{{ worlData.recovered || 'loading' }}</h3>
               <p>Recovered</p>
-            </div>
-            <div class="single-realtime-report active">
-              <h3>{{ worlData.deaths || 'loading' }}</h3>
-              <p>Death</p>
             </div>
           </div>
         </div>
@@ -68,15 +71,28 @@
                   <div class="status active"></div
                 ></span>
               </li>
-              <li>
+              <li :class="{ danger: countryData.todayCases > 0 }">
                 <strong>Today Affected:</strong>
                 <span
-                  >{{ countryData ? countryData.todayCases : 'loading' }}
+                  >{{ countryData.todayCases > 0 ? '+' : ''
+                  }}{{ countryData ? countryData.todayCases : 'loading' }}
+                  <div class="status t-effected"></div
+                ></span>
+              </li>
+              <li :class="{ danger: countryData.todayDeaths > 0 }">
+                <strong
+                  >Today Death{{
+                    countryData.todayDeaths > 1 ? 's' : ''
+                  }}:</strong
+                >
+                <span
+                  >{{ countryData.todayDeaths > 0 ? '+' : ''
+                  }}{{ countryData ? countryData.todayDeaths : 'loading' }}
                   <div class="status t-effected"></div
                 ></span>
               </li>
               <li>
-                <strong>Death:</strong>
+                <strong>Deaths:</strong>
                 <span
                   >{{ countryData ? countryData.deaths : 'loading' }}
                   <div class="status death"></div
@@ -111,10 +127,10 @@
                   <th class="fix-width">Country</th>
                   <th>Active</th>
                   <th>Today Affected</th>
-                  <th>Today Death</th>
+                  <th>Today Deaths</th>
                   <th>Critical</th>
                   <th>Recover</th>
-                  <th>Death</th>
+                  <th>Deaths</th>
                 </tr>
               </thead>
               <tbody class="custom-scroll">
@@ -207,6 +223,20 @@ export default {
           .toLowerCase()
           .includes(this.searchData.toLowerCase())
       })
+    },
+    todayAffected() {
+      let total = 0
+      this.countryAllData.forEach(data => {
+        total = total + parseInt(data.todayCases)
+      })
+      return total
+    },
+    todayDeath() {
+      let total = 0
+      this.countryAllData.forEach(data => {
+        total = total + parseInt(data.todayDeaths)
+      })
+      return total
     }
   }
 }
