@@ -169,6 +169,7 @@ select:focus {
 .input-area {
   position: relative;
   z-index: 1;
+  margin-left: 10px;
 }
 
 button.search {
