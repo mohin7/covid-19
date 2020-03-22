@@ -187,7 +187,10 @@ thead tr td {
   text-transform: uppercase;
   color: #222;
 }
-
+.danger{
+  color: red;
+  font-weight: 500;
+}
 tbody tr td {
   font-size: 13px;
 }

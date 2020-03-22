@@ -123,7 +123,7 @@
                     <strong>{{ country.country }}</strong>
                   </td>
                   <td>{{ country.cases }}</td>
-                  <td>{{ country.todayCases }}</td>
+                  <td :class="{'danger': country.todayCases > 0}">{{ country.todayCases == 0 ? country.todayCases : "+"+ country.todayCases }}</td>
                   <td>{{ country.critical }}</td>
                   <td>{{ country.recovered }}</td>
                   <td>{{ country.deaths }}</td>
