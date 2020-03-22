@@ -171,36 +171,6 @@ select:focus {
   z-index: 1;
 }
 
-.country-list {
-  overflow: auto;
-  max-height: calc(100vh - 180px);
-}
-
-.table td,
-.table th {
-  border-top: none;
-}
-
-thead tr td {
-  font-weight: 700;
-  font-size: 13px;
-  text-transform: uppercase;
-  color: #222;
-}
-.danger{
-  color: red;
-  font-weight: 500;
-  background-color: #eff7fe;
-}
-tbody tr td {
-  font-size: 13px;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-  background: #eaf2f9;
-  box-shadow: 6px 6px 7px #e5edf4, -6px -6px 7px #eff7fe;
-}
-
 button.search {
   position: absolute;
   right: 0;

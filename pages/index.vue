@@ -51,7 +51,7 @@
               >{{ country.country || 'Lodaing' }}</option
             >
           </select>
-
+          <!-- <p>{{country.country.sort()}}</p> -->
           <div class="location-effected">
             <ul>
               <li>
@@ -108,24 +108,36 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <td>Country</td>
-                  <td>Active</td>
-                  <td>Today Affected</td>
-                  <td>Today Death</td>
-                  <td>Critical</td>
-                  <td>Recover</td>
-                  <td>Death</td>
+                  <th class="fix-width">Country</th>
+                  <th>Active</th>
+                  <th>Today Affected</th>
+                  <th>Today Death</th>
+                  <th>Critical</th>
+                  <th>Recover</th>
+                  <th>Death</th>
                 </tr>
               </thead>
               <tbody class="custom-scroll">
                 <tr v-for="country in filteredCountrys" :key="country.country">
                   <div v-if="filteredCountrys.length == 0">No data</div>
-                  <td>
+                  <td class="fix-width">
                     <strong>{{ country.country }}</strong>
                   </td>
                   <td>{{ country.cases }}</td>
-                  <td :class="{'danger': country.todayCases > 0}">{{ country.todayCases == 0 ? country.todayCases : "+"+ country.todayCases }}</td>
-                  <td :class="{'danger': country.todayDeaths > 0}">{{ country.todayDeaths == 0 ? country.todayDeaths : "+"+ country.todayDeaths }}</td>
+                  <td :class="{ danger: country.todayCases > 0 }">
+                    {{
+                      country.todayCases == 0
+                        ? country.todayCases
+                        : '+' + country.todayCases
+                    }}
+                  </td>
+                  <td :class="{ danger: country.todayDeaths > 0 }">
+                    {{
+                      country.todayDeaths == 0
+                        ? country.todayDeaths
+                        : '+' + country.todayDeaths
+                    }}
+                  </td>
                   <td>{{ country.critical }}</td>
                   <td>{{ country.recovered }}</td>
                   <td>{{ country.deaths }}</td>
@@ -200,5 +212,6 @@ export default {
 }
 </script>
 <style>
+@import '@/assets/css/table.css';
 @import '@/assets/css/style.css';
 </style>
