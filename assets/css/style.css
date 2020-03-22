@@ -190,6 +190,7 @@ thead tr td {
 .danger{
   color: red;
   font-weight: 500;
+  background-color: #eff7fe;
 }
 tbody tr td {
   font-size: 13px;

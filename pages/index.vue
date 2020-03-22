@@ -1,6 +1,6 @@
 <template>
   <div class="row mt-5">
-    <div class="col-lg-7">
+    <div class="col-lg-6">
       <div class="app-left-content">
         <div class="heading-top">
           <h1>
@@ -94,7 +94,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-5">
+    <div class="col-lg-6">
       <div class="app-right-content">
         <div class="all-country">
           <div class="input-area">
@@ -111,6 +111,7 @@
                   <td>Country</td>
                   <td>Active</td>
                   <td>Today Affected</td>
+                  <td>Today Death</td>
                   <td>Critical</td>
                   <td>Recover</td>
                   <td>Death</td>
@@ -124,6 +125,7 @@
                   </td>
                   <td>{{ country.cases }}</td>
                   <td :class="{'danger': country.todayCases > 0}">{{ country.todayCases == 0 ? country.todayCases : "+"+ country.todayCases }}</td>
+                  <td :class="{'danger': country.todayDeaths > 0}">{{ country.todayDeaths == 0 ? country.todayDeaths : "+"+ country.todayDeaths }}</td>
                   <td>{{ country.critical }}</td>
                   <td>{{ country.recovered }}</td>
                   <td>{{ country.deaths }}</td>
