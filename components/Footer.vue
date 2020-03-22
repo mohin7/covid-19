@@ -2,7 +2,7 @@
   <div id="contact" class="footer-area">
     <div class="footer-left">
       <p>
-        © 2020 <a target="_blank" href="https://www.facebook.com/mohincse/">Mohin</a> Inc. All rights reserved.
+        © 2020 <a target="_blank" href="https://www.facebook.com/mohincse/">Mohin</a>. All rights reserved.
       </p>
     </div>
     <div class="footer-left">

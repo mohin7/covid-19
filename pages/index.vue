@@ -1,6 +1,6 @@
 <template>
   <div class="row mt-5">
-    <div class="col-lg-7">
+    <div class="col-lg-6">
       <div class="app-left-content">
         <div class="heading-top">
           <h1>
@@ -23,15 +23,18 @@
           <div class="realtiem-report-wrapper">
             <div class="single-realtime-report">
               <h3>{{ worlData.cases || 'loading' }}</h3>
-              <p>Active</p>
+              <h5 class="danger">+{{ todayAffected }} (Today)</h5>
+              <p>Total Active</p>
+            </div>
+
+            <div class="single-realtime-report active">
+              <h3>{{ worlData.deaths || 'loading' }}</h3>
+              <h5 class="danger">+{{ todayDeath }} (Today)</h5>
+              <p>Deaths</p>
             </div>
             <div class="single-realtime-report">
               <h3>{{ worlData.recovered || 'loading' }}</h3>
               <p>Recovered</p>
-            </div>
-            <div class="single-realtime-report active">
-              <h3>{{ worlData.deaths || 'loading' }}</h3>
-              <p>Death</p>
             </div>
           </div>
         </div>
@@ -51,7 +54,7 @@
               >{{ country.country || 'Lodaing' }}</option
             >
           </select>
-
+          <!-- <p>{{country.country.sort()}}</p> -->
           <div class="location-effected">
             <ul>
               <li>
@@ -68,15 +71,28 @@
                   <div class="status active"></div
                 ></span>
               </li>
-              <li>
+              <li :class="{ danger: countryData.todayCases > 0 }">
                 <strong>Today Affected:</strong>
                 <span
-                  >{{ countryData ? countryData.todayCases : 'loading' }}
+                  >{{ countryData.todayCases > 0 ? '+' : ''
+                  }}{{ countryData ? countryData.todayCases : 'loading' }}
+                  <div class="status t-effected"></div
+                ></span>
+              </li>
+              <li :class="{ danger: countryData.todayDeaths > 0 }">
+                <strong
+                  >Today Death{{
+                    countryData.todayDeaths > 1 ? 's' : ''
+                  }}:</strong
+                >
+                <span
+                  >{{ countryData.todayDeaths > 0 ? '+' : ''
+                  }}{{ countryData ? countryData.todayDeaths : 'loading' }}
                   <div class="status t-effected"></div
                 ></span>
               </li>
               <li>
-                <strong>Death:</strong>
+                <strong>Deaths:</strong>
                 <span
                   >{{ countryData ? countryData.deaths : 'loading' }}
                   <div class="status death"></div
@@ -94,7 +110,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-5">
+    <div class="col-lg-6">
       <div class="app-right-content">
         <div class="all-country">
           <div class="input-area">
@@ -108,22 +124,36 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <td>Country</td>
-                  <td>Active</td>
-                  <td>Today Affected</td>
-                  <td>Critical</td>
-                  <td>Recover</td>
-                  <td>Death</td>
+                  <th class="fix-width">Country</th>
+                  <th>Active</th>
+                  <th>Today Affected</th>
+                  <th>Today Deaths</th>
+                  <th>Critical</th>
+                  <th>Recover</th>
+                  <th>Deaths</th>
                 </tr>
               </thead>
               <tbody class="custom-scroll">
                 <tr v-for="country in filteredCountrys" :key="country.country">
                   <div v-if="filteredCountrys.length == 0">No data</div>
-                  <td>
+                  <td class="fix-width">
                     <strong>{{ country.country }}</strong>
                   </td>
                   <td>{{ country.cases }}</td>
-                  <td>{{ country.todayCases }}</td>
+                  <td :class="{ danger: country.todayCases > 0 }">
+                    {{
+                      country.todayCases == 0
+                        ? country.todayCases
+                        : '+' + country.todayCases
+                    }}
+                  </td>
+                  <td :class="{ danger: country.todayDeaths > 0 }">
+                    {{
+                      country.todayDeaths == 0
+                        ? country.todayDeaths
+                        : '+' + country.todayDeaths
+                    }}
+                  </td>
                   <td>{{ country.critical }}</td>
                   <td>{{ country.recovered }}</td>
                   <td>{{ country.deaths }}</td>
@@ -193,10 +223,25 @@ export default {
           .toLowerCase()
           .includes(this.searchData.toLowerCase())
       })
+    },
+    todayAffected() {
+      let total = 0
+      this.countryAllData.forEach(data => {
+        total = total + parseInt(data.todayCases)
+      })
+      return total
+    },
+    todayDeath() {
+      let total = 0
+      this.countryAllData.forEach(data => {
+        total = total + parseInt(data.todayDeaths)
+      })
+      return total
     }
   }
 }
 </script>
 <style>
+@import '@/assets/css/table.css';
 @import '@/assets/css/style.css';
 </style>

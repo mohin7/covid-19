@@ -52,13 +52,15 @@
   margin-left: 15px;
   border-radius: 5px;
 }
-button:focus{
+
+button:focus {
   outline: none;
 }
+
 .contact-button a {
   color: #333;
-  
 }
+
 .heading-top h1 {
   font-size: 36px;
   font-weight: 400;
@@ -115,10 +117,17 @@ button:focus{
   margin-right: 0;
 }
 
+.single-realtime-report:last-child h3 {
+  margin-bottom: 30px;
+}
+
 .single-realtime-report h3 {
   font-size: 36px;
   font-weight: 400;
-  margin-bottom: 30px;
+}
+
+.single-realtime-report h5 {
+  font-size: 15px;
 }
 
 .single-realtime-report p {
@@ -169,32 +178,7 @@ select:focus {
 .input-area {
   position: relative;
   z-index: 1;
-}
-
-.country-list {
-  overflow: auto;
-  max-height: calc(100vh - 180px);
-}
-
-.table td,
-.table th {
-  border-top: none;
-}
-
-thead tr td {
-  font-weight: 700;
-  font-size: 13px;
-  text-transform: uppercase;
-  color: #222;
-}
-
-tbody tr td {
-  font-size: 13px;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-  background: #eaf2f9;
-  box-shadow: 6px 6px 7px #e5edf4, -6px -6px 7px #eff7fe;
+  margin-left: 10px;
 }
 
 button.search {
@@ -249,6 +233,7 @@ button.search {
 ::-webkit-scrollbar-thumb:hover {
   background: #ddd;
 }
+
 .nb h4 {
   margin-top: 30px;
   font-size: 15px;
@@ -290,29 +275,36 @@ button.search {
   .row.mt-5 {
     margin-top: 30px !important;
   }
+
   .logo a {
     font-size: 22px;
   }
+
   .menu-item {
     display: none;
   }
+
   .heading-top h1 {
     font-size: 26px;
     overflow: hidden;
     margin-bottom: 20px;
   }
+
   .heading-top h1 span {
     display: block;
     float: inherit;
   }
+
   .heading-top p {
     display: none;
   }
+
   .real-time-report h4 {
     margin-bottom: 15px;
     margin-top: 36px;
     font-weight: 500;
   }
+
   .single-realtime-report h3 {
     font-size: 30px;
   }
@@ -321,20 +313,25 @@ button.search {
     overflow-x: auto;
     padding: 10px;
   }
+
   .single-realtime-report {
     margin-bottom: 30px;
     min-width: 200px;
   }
+
   .location-area {
     margin-bottom: 30px;
   }
+
   .footer-area {
     display: inherit !important;
   }
+
   .footer-left {
     margin-bottom: 20px;
     text-align: center;
   }
+
   .input-area {
     margin-bottom: 15px;
   }

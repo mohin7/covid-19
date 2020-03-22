@@ -1,7 +1,7 @@
 {
   "name": "covid-19",
   "version": "1.0.0",
-  "description": "My super-excellent Nuxt.js project",
+  "description": "Covid-19 Realtime Report",
   "author": "MD Mohin",
   "private": true,
   "scripts": {
