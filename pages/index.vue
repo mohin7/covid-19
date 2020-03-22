@@ -24,7 +24,7 @@
             <div class="single-realtime-report">
               <h3>{{ worlData.cases || 'loading' }}</h3>
               <h5 class="danger">+{{ todayAffected }} (Today)</h5>
-              <p>Total Active</p>
+              <p>Total Cases</p>
             </div>
 
             <div class="single-realtime-report active">
@@ -65,7 +65,7 @@
                 ></span>
               </li>
               <li>
-                <strong>Active:</strong>
+                <strong>Total Cases:</strong>
                 <span
                   >{{ countryData ? countryData.cases : 'loading' }}
                   <div class="status active"></div
@@ -125,7 +125,7 @@
               <thead>
                 <tr>
                   <th class="fix-width">Country</th>
-                  <th>Active</th>
+                  <th>Active Cases</th>
                   <th>Today Affected</th>
                   <th>Today Deaths</th>
                   <th>Critical</th>
