@@ -31,6 +31,7 @@ tbody {
   display: block;
   max-height: 50vh;
   overflow: auto;
+  padding-left: 10px;
 }
 thead,
 tbody tr {
@@ -38,8 +39,12 @@ tbody tr {
   width: 100%;
   table-layout: fixed;
 }
+.table thead th{
+  font-size: 14px;
+}
 thead {
-  width: calc(100% - 20px);
+  width: calc(100% - 30px);
+  margin-left: 10px;
 }
 .fix-width {
   width: 130px;
