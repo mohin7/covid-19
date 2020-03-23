@@ -125,7 +125,7 @@
               <thead>
                 <tr>
                   <th class="fix-width">Country</th>
-                  <th>Active Cases</th>
+                  <th>Total Cases</th>
                   <th>Today Affected</th>
                   <th>Today Deaths</th>
                   <th>Critical</th>
