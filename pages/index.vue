@@ -29,7 +29,7 @@
 
             <div class="single-realtime-report active">
               <h3>{{ worlData.deaths || 'loading' }}</h3>
-              <h5 class="danger">+{{ todayDeath }} (Today)</h5>
+              <h5 class="danger">+ {{ todayDeath }} (Today)</h5>
               <p>Deaths</p>
             </div>
             <div class="single-realtime-report">
@@ -232,8 +232,12 @@ export default {
       return total
     },
     todayDeath() {
+
       let total = 0
       this.countryAllData.forEach(data => {
+        if(data.todayDeaths == null){
+          data.todayDeaths = 0;
+        }
         total = total + parseInt(data.todayDeaths)
       })
       return total
