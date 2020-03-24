@@ -65,7 +65,7 @@
                 ></span>
               </li>
               <li>
-                <strong>Total Cases:</strong>
+                <strong>Total Cases: </strong>
                 <span
                   >{{ countryData ? countryData.cases : 'loading' }}
                   <div class="status active"></div
