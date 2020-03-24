@@ -232,11 +232,10 @@ export default {
       return total
     },
     todayDeath() {
-
       let total = 0
       this.countryAllData.forEach(data => {
-        if(data.todayDeaths == null){
-          data.todayDeaths = 0;
+        if (data.todayDeaths == null) {
+          data.todayDeaths = 0
         }
         total = total + parseInt(data.todayDeaths)
       })
