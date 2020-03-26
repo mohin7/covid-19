@@ -22,18 +22,18 @@
           <h4>Realtime Report (Global)</h4>
           <div class="realtiem-report-wrapper">
             <div class="single-realtime-report">
-              <h3>{{ formatNumber(worlData.cases) || 'loading' }}</h3>
-              <h5 class="danger">+{{ formatNumber(todayAffected) }} (Today)</h5>
+              <h3>{{ worlData.cases || 'loading' }}</h3>
+              <h5 class="danger">+{{ todayAffected }} (Today)</h5>
               <p>Total Cases</p>
             </div>
 
             <div class="single-realtime-report active">
-              <h3>{{ formatNumber(worlData.deaths) || 'loading' }}</h3>
-              <h5 class="danger">+ {{ formatNumber(todayDeath) }} (Today)</h5>
+              <h3>{{ worlData.deaths || 'loading' }}</h3>
+              <h5 class="danger">+ {{ todayDeath }} (Today)</h5>
               <p>Deaths</p>
             </div>
             <div class="single-realtime-report">
-              <h3>{{ formatNumber(worlData.recovered) || 'loading' }}</h3>
+              <h3>{{ worlData.recovered || 'loading' }}</h3>
               <p>Recovered</p>
             </div>
           </div>
@@ -67,9 +67,7 @@
               <li>
                 <strong>Total Cases: </strong>
                 <span
-                  >{{
-                    countryData ? formatNumber(countryData.cases) : 'loading'
-                  }}
+                  >{{ countryData ? countryData.cases : 'loading' }}
                   <div class="status active"></div
                 ></span>
               </li>
@@ -77,11 +75,7 @@
                 <strong>Today Affected:</strong>
                 <span
                   >{{ countryData.todayCases > 0 ? '+' : ''
-                  }}{{
-                    countryData
-                      ? formatNumber(countryData.todayCases)
-                      : 'loading'
-                  }}
+                  }}{{ countryData ? countryData.todayCases : 'loading' }}
                   <div class="status t-effected"></div
                 ></span>
               </li>
@@ -93,31 +87,21 @@
                 >
                 <span
                   >{{ countryData.todayDeaths > 0 ? '+' : ''
-                  }}{{
-                    countryData
-                      ? formatNumber(countryData.todayDeaths)
-                      : 'loading'
-                  }}
+                  }}{{ countryData ? countryData.todayDeaths : 'loading' }}
                   <div class="status t-effected"></div
                 ></span>
               </li>
               <li>
                 <strong>Deaths:</strong>
                 <span
-                  >{{
-                    countryData ? formatNumber(countryData.deaths) : 'loading'
-                  }}
+                  >{{ countryData ? countryData.deaths : 'loading' }}
                   <div class="status death"></div
                 ></span>
               </li>
               <li>
                 <strong>Recovered</strong>
                 <span
-                  >{{
-                    countryData
-                      ? formatNumber(countryData.recovered)
-                      : 'loading'
-                  }}
+                  >{{ countryData ? countryData.recovered : 'loading' }}
                   <div class="status recovered"></div
                 ></span>
               </li>
@@ -155,24 +139,24 @@
                   <td class="fix-width">
                     <strong>{{ country.country }}</strong>
                   </td>
-                  <td>{{ formatNumber(country.cases) }}</td>
+                  <td>{{ country.cases }}</td>
                   <td :class="{ danger: country.todayCases > 0 }">
                     {{
                       country.todayCases == 0
                         ? country.todayCases
-                        : '+' + formatNumber(country.todayCases)
+                        : '+' + country.todayCases
                     }}
                   </td>
                   <td :class="{ danger: country.todayDeaths > 0 }">
                     {{
                       country.todayDeaths == 0
                         ? country.todayDeaths
-                        : '+' + formatNumber(country.todayDeaths)
+                        : '+' + country.todayDeaths
                     }}
                   </td>
                   <td>{{ country.critical }}</td>
-                  <td>{{ formatNumber(country.recovered) }}</td>
-                  <td>{{ formatNumber(country.deaths) }}</td>
+                  <td>{{ country.recovered }}</td>
+                  <td>{{ country.deaths }}</td>
                 </tr>
               </tbody>
             </table>
@@ -230,11 +214,6 @@ export default {
     },
     getData(data) {
       return moment(data).fromNow()
-    },
-    formatNumber(num) {
-      if (num) {
-        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-      }
     }
   },
   computed: {
