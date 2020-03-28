@@ -163,7 +163,7 @@
     <div class="col-lg-6">
       <div class="app-right-content">
         <div class="all-country">
-          <div class="input-area">
+          <div class="input-area bn">
             <input
               type="text"
               placeholder="দেশের নাম দিয়ে খুজুন!"
@@ -322,11 +322,12 @@ export default {
 .realtiem-report-wrapper.bn .single-realtime-report h3,
 .realtiem-report-wrapper.bn .single-realtime-report h5,
 .realtiem-report-wrapper.bn .single-realtime-report p,
-.table.bn td {
+.table.bn td,
+.input-area.bn input {
   font-family: 'Baloo Da 2', cursive;
 }
 
-.fix-width strong{
+.fix-width strong {
   font-family: roboto;
 }
 </style>
