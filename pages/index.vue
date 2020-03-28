@@ -76,8 +76,8 @@
 
         <div class="location-area bn mt-4">
           <label for="#select"
-            >আপনার সিলেক্টেট দেশঃ
-            {{ countryData ? countryData.country : 'loading' }}</label
+            >আপনি দেখতে চেয়েছেন
+            {{ countryData ? countryData.country : 'loading' }} তথ্য</label
           >
           <select id="select" name="Select" @change="countryChange($event)">
             <option
