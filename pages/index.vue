@@ -325,4 +325,8 @@ export default {
 .table.bn td {
   font-family: 'Baloo Da 2', cursive;
 }
+
+.fix-width strong{
+  font-family: roboto;
+}
 </style>
