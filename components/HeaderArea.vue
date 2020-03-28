@@ -11,7 +11,15 @@
         </ul> -->
       </div>
 
-      <a class="contact-button" href="#contact">Contact</a>
+      <nuxt-link class="contact-button" to="/en">ENG</nuxt-link>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {}
+  }
+}
+</script>
