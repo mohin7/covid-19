@@ -29,7 +29,7 @@ tbody tr td {
 
 tbody {
   display: block;
-  max-height: 50vh;
+  max-height: 58vh;
   overflow: auto;
   padding-left: 10px;
 }

@@ -2,7 +2,7 @@
   <div class="row mt-5">
     <div class="col-lg-6">
       <div class="app-left-content">
-        <div class="heading-top">
+        <div class="heading-top bn">
           <h1>
             করোনা ভাইরাস
             <span
@@ -22,9 +22,9 @@
           </p>
         </div>
         <!-- realtime report start  -->
-        <div class="real-time-report">
+        <div class="real-time-report bn">
           <h4>বর্তমান বিশ্বে আক্রান্তের রিপোর্টঃ</h4>
-          <div class="realtiem-report-wrapper">
+          <div class="realtiem-report-wrapper bn">
             <div class="single-realtime-report">
               <h3>
                 {{
@@ -40,7 +40,7 @@
                     ? todayAffected.toLocaleString('bn-BD')
                     : '' || 'loading'
                 }}
-                (Today)
+                (আজ)
               </h5>
               <p>আক্রান্ত হয়েছে</p>
             </div>
@@ -56,7 +56,7 @@
               <h5 class="danger">
                 +
                 {{ todayDeath ? todayDeath.toLocaleString('bn-BD') : '' }}
-                (আজকে)
+                (আজ)
               </h5>
               <p>মারা গেছেন</p>
             </div>
@@ -74,7 +74,7 @@
         </div>
         <!-- realtime report end -->
 
-        <div class="location-area mt-4">
+        <div class="location-area bn mt-4">
           <label for="#select"
             >আপনার সিলেক্টেট দেশঃ
             {{ countryData ? countryData.country : 'loading' }}</label
@@ -89,7 +89,7 @@
             >
           </select>
           <!-- <p>{{country.country.sort()}}</p> -->
-          <div class="location-effected">
+          <div class="location-effected bn">
             <ul>
               <li>
                 <strong>দেশঃ</strong>
@@ -175,7 +175,7 @@
           </div>
 
           <div class="country-list">
-            <table class="table table-striped">
+            <table class="table bn table-striped">
               <thead>
                 <tr>
                   <th class="fix-width">দেশ</th>
@@ -189,9 +189,7 @@
               </thead>
               <tbody class="custom-scroll">
                 <tr v-for="country in filteredCountrys" :key="country.country">
-                  <div v-if="filteredCountrys.length == 0">
-                    কোনো ডাটা পাওয়া যায় নাই
-                  </div>
+                  <div v-if="filteredCountrys.length == 0">No data</div>
                   <td class="fix-width">
                     <strong>{{ country.country }}</strong>
                   </td>
@@ -217,12 +215,12 @@
               </tbody>
             </table>
             <h4 class="text-center">
-              {{ filteredCountrys.length == 0 ? 'No data available' : '' }}
+              {{ filteredCountrys.length == 0 ? 'কোনো ডাটা পাওয়া যায় নি' : '' }}
             </h4>
           </div>
         </div>
       </div>
-      <div class="nb">
+      <div class="nb bn">
         <h4>কোনো পরামর্শ থাকলে জানাতে ভুলবেন না।</h4>
       </div>
     </div>
@@ -310,12 +308,21 @@ export default {
 @import '@/assets/css/style.css';
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Baloo+Da+2:400,500,600,700,800&display=swap');
-body {
-  font-family: 'Baloo Da 2', cursive;
-}
-h1,
-h2,
-h3 {
+
+.heading-top.bn h1,
+.real-time-report.bn h4,
+.location-area.bn label,
+.location-effected.bn ul li,
+.table.bn thead th,
+.nb.bn h4 {
   font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 700;
+}
+.heading-top.bn p,
+.realtiem-report-wrapper.bn .single-realtime-report h3,
+.realtiem-report-wrapper.bn .single-realtime-report h5,
+.realtiem-report-wrapper.bn .single-realtime-report p,
+.table.bn td {
+  font-family: 'Baloo Da 2', cursive;
 }
 </style>
