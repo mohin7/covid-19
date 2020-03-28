@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
 .container {
   max-width: 1300px;
 }
-
+/* font-family: 'Hind Siliguri', sans-serif; */
 .header-area {
   display: flex;
   justify-content: space-between;
