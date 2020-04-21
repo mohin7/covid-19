@@ -191,24 +191,24 @@ export default {
   },
   methods: {
     async fetchAllData() {
-      let res = await axios.get('https://corona.lmao.ninja/all')
+      let res = await axios.get('https://corona.lmao.ninja/v2/all')
       this.worlData = res.data
     },
     async fetchCountryData() {
-      let res = await axios.get('https://corona.lmao.ninja/countries/')
+      let res = await axios.get('https://corona.lmao.ninja/v2/countries/')
       this.countryAllData = res.data
     },
     async countryChange(e) {
       // get value
       const countryName = e.target.value
       let res = await axios.get(
-        `https://corona.lmao.ninja/countries/${countryName}`
+        `https://corona.lmao.ninja/v2/countries/${countryName}`
       )
       this.countryData = res.data
     },
     async defaultCountry() {
       let res = await axios.get(
-        `https://corona.lmao.ninja/countries/Bangladesh`
+        `https://corona.lmao.ninja/v2/countries/Bangladesh`
       )
       this.countryData = res.data
     },
